@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>宁都中学 2025届(25)班官网</title>
+    <link rel="icon"
+          href="https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/48540923dd54564ec2be9d57b4de9c82d0584f80.jpg"
+          type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            /*z-index: top;*/
+        }
+
+        /*.chooser {*/
+        /*    font-family: 黑体 monospace;*/
+        /*    color: white;*/
+        /*    position: relative;*/
+        /*}*/
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            text-align: center;
+            border-radius: 8px
+        }
+
+        #result {
+            overflow-y: auto;
+            height: 220px;
+            padding-right: 20px;
+        }
+
+        #result::-webkit-scrollbar {
+            width: 0.5em;
+        }
+
+        #result::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        #result::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        #result p {
+            margin: 2px 0;
+        }
+
+        .chooser {
+            margin-top: 20%;
+            text-align: center;
+            /*font-size: 50px;*/
+            font-family: "JetBrains Mono", monospace;
+            position: relative;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+        }
+        label {
+            font-family: 黑体 monospace;
+        }
+    </style>
+    <style>
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        #index-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background: #313540;
+            height: 60px;
+
+            border-bottom: 1px solid #313540;
+        }
+
+
+        .section-content {
+            display: flex;
+            align-items: center;
+        }
+
+        #index-logo {
+            margin-left: 50px;
+            width: 40px;
+            height: 60px;
+            background: url(https://s1.imagehub.cc/images/2024/02/11/b00d84b19c2c10170cd8f8178a11899b.png) no-repeat 0;
+            -webkit-background-size: auto 33px;
+            background-size: auto 33px;
+        }
+
+        .top-content {
+            position: relative;
+            margin-left: 8px;
+            /* 调整间距 */
+            font-family: "SimSun-ExtB", sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            color: gainsboro;
+            /*width: 150px;*/
+            white-space: nowrap;
+        }
+
+        .genshin {
+            position: relative;
+            margin-left: 1300px;
+            background: url(https://webstatic.mihoyo.com/bh3/upload/officialsites/201908/ys_1565764084_7084.png) no-repeat 0;
+            width: 80px;
+            height: 60px;
+            -webkit-background-size: auto 33px;
+            background-size: auto 33px;
+            float: right;
+        }
+
+        #page-bg {
+            /* background: url(https://s1.imagehub.cc/images/2024/02/10/1c15cf1b89425a3e99449e75a20de19a.png) no-repeat 0; */
+            background: url(https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=neom-39n8YVSn0d4-unsplash.jpg) no-repeat 0;
+            width: 100%;
+            height: 1000px;
+            -webkit-background-size: cover;
+            background-size: cover;
+            /*z-index: bottom;*/
+            margin-top: 0;
+            position: absolute;
+            /*filter: brightness(0.8);*/
+        }
+
+        #page-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 添加半透明遮罩层 */
+            mix-blend-mode: multiply; /* 使用混合模式，将背景图片和遮罩层进行混合 */
+        }
+    </style>
+    <style>
+        .dropdown {
+            margin-right: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(16, 17, 20, 0.747);
+            min-width: 80px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+            padding: 10px;
+            width: 50px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            /* 修改链接颜色 */
+            font-size: 18px;
+            /* 修改字体大小 */
+            /* text-decoration: none; */
+            /* 去掉下划线*/
+            padding: 12px 16px;
+            /* text-decoration: none; */
+            display: inline-block;
+            /*writing-mode: vertical-lr;*/
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+
+
+        }
+
+        .dropdown a {
+            color: white;
+            /* 修改链接颜色 */
+            font-size: 18px;
+            /* 修改字体大小 */
+            text-decoration: none;
+            /* 去掉下划线*/
+            display: block;
+            /*writing-mode: vertical-lr;*/
+            width: 50px;
+            height: 20px;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .top-item {
+            font-family: "幼圆", monospace;
+            position: absolute;
+            top: 35%;
+            left: 70%;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="section header" id="index-header">
+    <div class="section-content clearfix">
+        <a href="https://oss.tool.lu/cache/202402/09/223315R1oe83V3EABz8NYi.png" class="logo" id="index-logo"></a>
+        <div class="top-content">
+            宁都中学 2025届(25)班
+        </div>
+        <!-- 导航栏开始 -->
+        <div class="top-item">
+            <div class="dropdown">
+                <a href="./index.html">主页</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">功能</a>
+                <div class="dropdown-content">
+                    <a href="./NumsChooser.html">抽取</a>
+                    <a href="https://github.com/muff-cn">GitHub</a>
+
+                </div>
+            </div>
+        </div>
+
+        <a class="genshin" href="https://ys.mihoyo.com/" target="_blank"></a>
+    </div>
+</div>
+<!-- 导航栏结束 -->
+<div id="page-bg">
+    <div class="chooser">
+        <h1>数字抽取器</h1>
+        <div id="container">
+            <label for="quantity">数量:</label>
+            <input type="number" id="quantity" min="1" value="1">
+
+            <label for="min">最小值:</label>
+            <input type="number" id="min" value="1">
+
+            <label for="max">最大值:</label>
+            <input type="number" id="max" value="54">
+
+            <button onclick="generateNumbers()">抽取</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+</div>
+<script>
+    function generateNumbers() {
+        let quantity = parseInt(document.getElementById('quantity').value);
+        let min = parseInt(document.getElementById('min').value);
+        let max = parseInt(document.getElementById('max').value);
+
+        let result = document.getElementById('result');
+        result.innerHTML = '';
+
+        for (let i = 0; i < quantity; i++) {
+            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            result.innerHTML += '<p>' + randomNumber + '</p>';
+        }
+    }
+</script>
+</body>
+
+</html>
