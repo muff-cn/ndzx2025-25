@@ -12,7 +12,7 @@
 .section-content {
     display: flex;
     align-items: center;
-/*     margin-left: 10px; */
+    /*margin-left: 10px;*/
     /*height: 50%;*/
     /*position: relative;*/
 
@@ -21,7 +21,7 @@
 .logo {
     display: flex;
     align-items: center;
-    left: 10%;
+    left: 5%;
     height: 50%;
     position: absolute;
     top: 30%;
