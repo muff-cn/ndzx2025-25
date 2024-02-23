@@ -1,0 +1,29 @@
+
+#page-bg {
+    /* background: url(https://s1.imagehub.cc/images/2024/02/10/1c15cf1b89425a3e99449e75a20de19a.png) no-repeat 0; */
+    background: url(https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=neom-39n8YVSn0d4-unsplash.jpg) no-repeat 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+    margin-top: 0;
+    position: absolute;
+    overflow: hidden;
+
+}
+
+#page-bg::before {
+    margin-top: 0;
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 可根据需要调整透明度 */
+    filter: brightness(0.8);
+    /* 可根据需要调整亮度 */
+}

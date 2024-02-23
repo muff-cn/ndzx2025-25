@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    /*z-index: top;*/
+}
+
+/*.chooser {*/
+/*    font-family: 黑体 monospace;*/
+/*    color: white;*/
+/*    position: relative;*/
+/*}*/
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+    border-radius: 8px
+}
+
+#result {
+    overflow-y: auto;
+    height: 220px;
+    padding-right: 20px;
+}
+
+#result::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+#result::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#result::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#result p {
+    margin: 2px 0;
+}
+
+.chooser {
+    margin-top: 20%;
+    text-align: center;
+    /*font-size: 50px;*/
+    font-family: "JetBrains Mono", '微软雅黑', monospace;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+}
+
+label {
+    font-family: 黑体 monospace;
+}

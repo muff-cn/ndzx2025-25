@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>宁都中学 2025届(25)班官网</title>
+    <link rel="icon"
+          href="https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/48540923dd54564ec2be9d57b4de9c82d0584f80.jpg"
+          type="image/x-icon">
+
+</head>
+<link rel="stylesheet" href="style/chooser.css">
+<link rel="stylesheet" href="style/navigation-bar.css">
+<link rel="stylesheet" href="style/background.css">
+
+<body>
+<div class="section header" id="index-header">
+    <script>
+        // 使用 fetch API 加载 header.html 文件，然后将其插入到页面中
+        fetch('widgets/navigation-bar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('#index-header').innerHTML = html;
+            });
+    </script>
+</div>
+<div id="page-bg">
+    <div class="chooser">
+        <h1>数字抽取器</h1>
+        <div id="container">
+            <label for="quantity">数量:</label>
+            <input type="number" id="quantity" min="1" value="1">
+
+            <label for="min">最小值:</label>
+            <input type="number" id="min" value="1">
+
+            <label for="max">最大值:</label>
+            <input type="number" id="max" value="54">
+
+            <button onclick="generateNumbers()">抽取</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+</div>
+<script>
+    function generateNumbers() {
+        let quantity = parseInt(document.getElementById('quantity').value);
+        let min = parseInt(document.getElementById('min').value);
+        let max = parseInt(document.getElementById('max').value);
+
+        let result = document.getElementById('result');
+        result.innerHTML = '';
+
+        for (let i = 0; i < quantity; i++) {
+            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            result.innerHTML += '<p>' + randomNumber + '</p>';
+        }
+    }
+</script>
+</body>
+
+</html>
