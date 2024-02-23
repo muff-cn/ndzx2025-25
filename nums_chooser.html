@@ -16,16 +16,16 @@
 <link rel="stylesheet" href="style/background.css">
 
 <body>
-<div class="section header" id="index-header">
-    <script>
-        // 使用 fetch API 加载 header.html 文件，然后将其插入到页面中
-        fetch('widgets/navigation-bar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.querySelector('#index-header').innerHTML = html;
-            });
-    </script>
-</div>
+<div id="index-header"></div>
+<script>
+    let file = 'widgets/navigation-bar.html'
+    // 使用 fetch API 加载 html 文件，然后将其插入到页面中
+    fetch(file)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('#index-header').innerHTML = html;
+        });
+</script>
 <div id="page-bg">
     <div class="chooser">
         <h1>数字抽取器</h1>

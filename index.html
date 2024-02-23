@@ -12,18 +12,19 @@
 <link rel="stylesheet" href="style/main_page.css">
 <link rel="stylesheet" href="style/navigation-bar.css">
 <link rel="stylesheet" href="style/background.css">
-
+<!--<link rel="stylesheet" href="style/test-style.css">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
 <body>
-<div class="section header" id="index-header">
-    <script>
-        // 使用 fetch API 加载 html 文件，然后将其插入到页面中
-        fetch('widgets/navigation-bar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.querySelector('#index-header').innerHTML = html;
-            });
-    </script>
-</div>
+<div id="index-header"></div>
+<script>
+    let file = 'widgets/navigation-bar.html'
+    // 使用 fetch API 加载 html 文件，然后将其插入到页面中
+    fetch(file)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('#index-header').innerHTML = html;
+        });
+</script>
 <div id="page-bg">
     <div class="bg-text">Welcome!<br>Class-25 Page</div>
     <div class="sub-text">Be brave enough to be different</div>

@@ -10,12 +10,11 @@
     margin-top: 0;
     position: absolute;
     overflow: hidden;
-
 }
 
 #page-bg::before {
     margin-top: 0;
-    content: "";
+    /*content: "";*/
     position: absolute;
     overflow: hidden;
     top: 0;

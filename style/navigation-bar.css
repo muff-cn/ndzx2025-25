@@ -5,7 +5,6 @@
     z-index: 999;
     background: #313540;
     height: 60px;
-
     border-bottom: 1px solid #313540;
 }
 
@@ -13,17 +12,20 @@
 .section-content {
     display: flex;
     align-items: center;
+    margin-left: 10px;
+    /*height: 50%;*/
+    /*position: relative;*/
+
 }
 
-#index-logo {
-    margin-left: 50px;
-    width: 40px;
-    height: 60px;
-    background: url(https://s1.imagehub.cc/images/2024/02/11/b00d84b19c2c10170cd8f8178a11899b.png) no-repeat 0;
-    -webkit-background-size: auto 33px;
-    background-size: auto 33px;
-
-
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    /*margin-top: 13px;*/
 }
 
 .top-content {
@@ -39,14 +41,21 @@
 }
 
 .genshin {
-    position: relative;
-    margin-left: 1300px;
-    background: url(https://webstatic.mihoyo.com/bh3/upload/officialsites/201908/ys_1565764084_7084.png) no-repeat 0;
-    width: 80px;
-    height: 60px;
-    -webkit-background-size: auto 33px;
-    background-size: auto 33px;
-    float: right;
+    display: flex;
+    align-items: center;
+    /*margin-right: 50px;*/
+    right: 10%;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    /*background: url(https://webstatic.mihoyo.com/bh3/upload/officialsites/201908/ys_1565764084_7084.png) no-repeat 0;*/
+    /*width: 80px;*/
+    /*height: 60px;*/
+    /*-webkit-background-size: auto 33px;*/
+    /*background-size: auto 33px;*/
+    /*float: right;*/
+    /*display: flex;*/
+    /*align-items: center;*/
 }
 
 /*下拉栏样式*/
@@ -110,6 +119,5 @@
     font-family: "幼圆", monospace;
     position: absolute;
     top: 35%;
-    left: 70%;
-
+    left: 60%;
 }
