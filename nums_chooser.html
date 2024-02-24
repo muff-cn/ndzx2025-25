@@ -30,6 +30,8 @@
     <div class="chooser">
         <h1>数字抽取器</h1>
         <div id="container">
+            <label for="allow-repeats">允许重复:</label>
+            <input type="checkbox" id="allow-repeats">
             <label for="quantity">数量:</label>
             <input type="number" id="quantity" min="1" value="1">
 
@@ -38,6 +40,8 @@
 
             <label for="max">最大值:</label>
             <input type="number" id="max" value="54">
+
+
 
             <button onclick="generateNumbers()">抽取</button>
         </div>
@@ -50,16 +54,29 @@
         let quantity = parseInt(document.getElementById('quantity').value);
         let min = parseInt(document.getElementById('min').value);
         let max = parseInt(document.getElementById('max').value);
+        let allowRepeats = document.getElementById('allow-repeats').checked;
 
         let result = document.getElementById('result');
         result.innerHTML = '';
 
+        let selectedNumbers = [];
+
         for (let i = 0; i < quantity; i++) {
-            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            let randomNumber;
+            if (allowRepeats) {
+                randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            } else {
+                do {
+                    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                } while (selectedNumbers.includes(randomNumber));
+                selectedNumbers.push(randomNumber);
+            }
+
             result.innerHTML += '<p>' + randomNumber + '</p>';
         }
     }
 </script>
+
 </body>
 
 </html>

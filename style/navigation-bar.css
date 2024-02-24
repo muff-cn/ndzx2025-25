@@ -6,6 +6,7 @@
     background: #313540;
     height: 60px;
     border-bottom: 1px solid #313540;
+    /*filter: */
     opacity: 0.9;
 }
 
@@ -45,7 +46,7 @@
     display: flex;
     align-items: center;
     /*margin-right: 50px;*/
-    right: 10%;
+    right: 20%;
     height: 50%;
     position: absolute;
     top: 30%;
