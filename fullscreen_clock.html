@@ -42,6 +42,13 @@
             font-size: 0.7em;
         }
 
+        div {
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+        }
+
     </style>
 </head>
 <body>
@@ -138,24 +145,24 @@
     setInterval(updateClock, 1000);
 
 </script>
-    <script>
-        // 获取body元素
-        let body = document.body;
+<script>
+    // 获取body元素
+    let body = document.body;
 
-        // 创建计时器
-        let timer = setTimeout(function() {
-            let img = new Image();
-            img.src = 'original-url.jpg';
+    // 创建计时器
+    let timer = setTimeout(function () {
+        let img = new Image();
+        img.src = 'original-url.jpg';
 
-            img.onload = function() {
-                let loadedPercentage = (img.naturalWidth / img.width) * 100;
+        img.onload = function () {
+            let loadedPercentage = (img.naturalWidth / img.width) * 100;
 
-                // 如果加载百分比小于50%，则更换背景图片URL
-                if (loadedPercentage < 50) {
-                    body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
-                }
-            };
-        }, 5000);
-    </script>
+            // 如果加载百分比小于50%，则更换背景图片URL
+            if (loadedPercentage < 50) {
+                body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
+            }
+        };
+    }, 5000);
+</script>
 </body>
 </html>
