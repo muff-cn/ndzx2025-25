@@ -4,10 +4,10 @@
     width: 100%;
     z-index: 999;
     background: #313540;
-    height: 60px;
+    height: 40px;
     border-bottom: 1px solid #313540;
     /*filter: */
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 
@@ -57,12 +57,17 @@
 
 .dropdown {
     margin-right: 10px;
+    /*margin-bottom: auto;*/
+    /*margin-top: auto;*/
     position: relative;
     display: inline-block;
+
 }
+
 .dropdown a {
     transition: 0.3s;
 }
+
 .dropdown a:hover {
     color: #0083ff;
 }
@@ -121,6 +126,8 @@
 .top-item {
     font-family: "幼圆", monospace;
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 60%;
+    display: flex;
+    align-items: center; /* 垂直居中 */
 }

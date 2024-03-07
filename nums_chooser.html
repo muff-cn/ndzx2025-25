@@ -41,20 +41,34 @@
             <label for="max">最大值:</label>
             <input type="number" id="max" value="54">
 
-
-
             <button onclick="generateNumbers()">抽取</button>
         </div>
 
         <div id="result"></div>
     </div>
 </div>
+
 <script>
     function generateNumbers() {
         let quantity = parseInt(document.getElementById('quantity').value);
         let min = parseInt(document.getElementById('min').value);
         let max = parseInt(document.getElementById('max').value);
         let allowRepeats = document.getElementById('allow-repeats').checked;
+
+        // 如果max小于min，则交换二者的值
+        if (max < min) {
+            let temp = max;
+            max = min;
+            min = temp;
+            document.getElementById('max').value = max
+            document.getElementById('min').value = min
+        }
+
+        // 如果max - min + 1大于数量且不允许重复，则将数量改为max - min + 1
+        if (!allowRepeats && (max - min + 1) < quantity) {
+            quantity = max - min + 1;
+            document.getElementById('quantity').value = quantity;
+        }
 
         let result = document.getElementById('result');
         result.innerHTML = '';
@@ -76,6 +90,7 @@
         }
     }
 </script>
+
 
 </body>
 
