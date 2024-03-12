@@ -13,7 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('./imgs/bg-02.jpg');
+            background-image: url('https://img2.imgtp.com/2024/03/11/i3TPVgon.jpg');
             background-size: cover;
             /*background-color: #32936F; !* 绿色背景色 *!*/
             color: white;
@@ -149,20 +149,20 @@
     // 获取body元素
     let body = document.body;
 
-    // 创建计时器
-    let timer = setTimeout(function () {
-        let img = new Image();
-        img.src = 'original-url.jpg';
-
-        img.onload = function () {
-            let loadedPercentage = (img.naturalWidth / img.width) * 100;
-
-            // 如果加载百分比小于50%，则更换背景图片URL
-            if (loadedPercentage < 50) {
-                body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
-            }
-        };
-    }, 5000);
+    // // 创建计时器
+    // let timer = setTimeout(function () {
+    //     let img = new Image();
+    //     img.src = 'original-url.jpg';
+    //
+    //     img.onload = function () {
+    //         let loadedPercentage = (img.naturalWidth / img.width) * 100;
+    //
+    //         // 如果加载百分比小于50%，则更换背景图片URL
+    //         if (loadedPercentage < 50) {
+    //             body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
+    //         }
+    //     };
+    // }, 5000);
 </script>
 </body>
 </html>
