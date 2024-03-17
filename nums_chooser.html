@@ -7,7 +7,7 @@
 
     <title>宁都中学 2025届(25)班官网</title>
     <link rel="icon"
-          href="https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/48540923dd54564ec2be9d57b4de9c82d0584f80.jpg"
+          href="https://img2.imgtp.com/2024/03/11/DqfOqhuM.png"
           type="image/x-icon">
 
 </head>
@@ -68,6 +68,9 @@
         if (!allowRepeats && (max - min + 1) < quantity) {
             quantity = max - min + 1;
             document.getElementById('quantity').value = quantity;
+        }
+        if (quantity > 512) {
+            quantity = 512;
         }
 
         let result = document.getElementById('result');
