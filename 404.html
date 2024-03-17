@@ -87,25 +87,28 @@
 <script src="./404-Page/js/jquery.min.js"></script>
 <script src="./404-Page/js/script.js"></script>
 <script>
-    // 获取当前页面的 URL
-    let currentURL = window.location.href;
-
-    // 处理用户输入的错误地址导致资源地址变动的情况
-    function process_wrong_url(tag, attr) {
-        document.querySelectorAll(tag).forEach(function (link) {
-            let href = link.getAttribute(attr);
-            if (href.startsWith('./') && !href.startsWith('./404-Page/')) {
-                let lastSlashIndex = currentURL.lastIndexOf('/');
-                let baseURL = currentURL.substring(0, lastSlashIndex + 1);
-                let newHref = baseURL + href.substring(2); // 去掉"./"，保持相对路径
-                link.setAttribute(attr, newHref);
+    // 处理用户输入的错误地址，重定向到根目录下的404页面
+    document.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            let href = link.getAttribute('href');
+            if (isRelativePath(href) && !isValidURL(href)) {
+                event.preventDefault(); // 阻止默认跳转行为
+                window.location.href = './404.html'; // 重定向到根目录下的404页面
             }
         });
+    });
 
+    // 判断是否为相对路径
+    function isRelativePath(url) {
+        return (url.startsWith('./') || url.startsWith('../'));
     }
 
-    process_wrong_url('link', 'href')
-    process_wrong_url('script', 'src')
+    // 判断URL是否有效
+    function isValidURL(url) {
+        let a = document.createElement('a');
+        a.href = url;
+        return (a.host && a.host !== window.location.host);
+    }
 
 </script>
 </body>
