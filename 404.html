@@ -93,7 +93,7 @@
             let href = link.getAttribute('href');
             if (isRelativePath(href) && !isValidURL(href)) {
                 event.preventDefault(); // 阻止默认跳转行为
-                window.location.href = './404.html'; // 重定向到根目录下的404页面
+                window.location.href = '/404.html'; // 重定向到根目录下的404页面
             }
         });
     });
