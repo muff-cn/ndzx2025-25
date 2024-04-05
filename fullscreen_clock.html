@@ -3,166 +3,21 @@
 <head>
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    <link rel="stylesheet" type="text/css" href="style/clock.css">
     <link rel="icon"
           href="https://img2.imgtp.com/2024/03/11/DqfOqhuM.png"
           type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全屏背景时钟</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('https://img2.imgtp.com/2024/03/11/i3TPVgon.jpg');
-            background-size: cover;
-            /*background-color: #32936F; !* 绿色背景色 *!*/
-            color: white;
-            font-size: 4.8em;
-            text-align: center;
-            text-align-all: center;
 
-        }
-
-        #clock {
-            font-family: "JetBrains Mono", 幼圆, "Microsoft YaHei", sans-serif;
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-
-        #lunar-time {
-            font-family: 幼圆, "Microsoft YaHei", sans-serif;
-            position: absolute;
-            top: 44%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-            font-size: 0.7em;
-        }
-
-        div {
-            -webkit-user-select: none; /* Safari 3.1+ */
-            -moz-user-select: none; /* Firefox 2+ */
-            -ms-user-select: none; /* IE 10+ */
-            user-select: none; /* Standard syntax */
-        }
-
-    </style>
 </head>
 <body>
-
 <div id="clock"></div>
 <div id="lunar-time"></div>
+<!--<button id="prevBtn">Previous</button>-->
+<!--<button id="nextBtn">Next</button>-->
+<script src="js/clock.js"></script>
 
-<script>
-    let timeout;
-
-    // 获取要全屏显示的元素
-    let element = document.documentElement; // <html> 元素
-
-    // 定义一个变量来跟踪是否已经全屏
-    let isFullScreen = false;
-
-    // 定义双击事件的处理函数
-    function toggleFullScreen() {
-        if (!isFullScreen) {
-            // 进入全屏模式
-            if (element.requestFullscreen) {
-                element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) { // Firefox
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
-                element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) { // IE/Edge
-                element.msRequestFullscreen();
-            }
-            isFullScreen = true;
-        } else {
-            // 退出全屏模式
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) { // Firefox
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) { // Chrome, Safari 和 Opera
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) { // IE/Edge
-                document.msExitFullscreen();
-            }
-            isFullScreen = false;
-        }
-    }
-
-    // 监听双击事件
-    element.addEventListener('dblclick', toggleFullScreen);
-    let lunarDate = ''; // 全局变量用于保存农历日期
-
-    function updateClock() {
-        const now = new Date();
-
-        let year = now.getFullYear();
-        let month = (now.getMonth() + 1).toString().padStart(2, '0');
-        let day = now.getDate().toString().padStart(2, '0');
-
-        let hour = now.getHours().toString().padStart(2, '0');
-        let minute = now.getMinutes().toString().padStart(2, '0');
-        let second = now.getSeconds().toString().padStart(2, '0');
-
-        if (lunarDate === '') {
-            getLunarDate(year, month, day); // 如果农历日期为空，则发送请求获取农历日期
-        }
-
-        const dateDisplay = `${year}-${month}-${day}`;
-        const timeDisplay = `${hour}:${minute}:${second}`;
-        const lunarDisplay = `${lunarDate}`;
-
-        document.getElementById('clock').innerHTML = `${dateDisplay}<br>${timeDisplay}<br>`;
-        document.getElementById('lunar-time').innerHTML = `${lunarDisplay}`;
-    }
-
-
-    function getLunarDate(year, month, day) {
-        let xhr = new XMLHttpRequest()
-        let api = `https://www.36jxs.com/api/Commonweal/almanac?sun=${year}-${month}-${day}`
-        console.log(api)
-        xhr.open('GET', api, true);
-
-        xhr.onload = function () {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                let responseData = JSON.parse(xhr.responseText);
-                console.log(responseData);
-                lunarDate = responseData.data.LMonth + responseData.data.LDay; // 保存获取到的农历日期
-            } else {
-                console.error('请求失败：' + xhr.status);
-            }
-        };
-
-        xhr.send();
-    }
-
-    updateClock();
-    setInterval(updateClock, 1000);
-
-</script>
-<script>
-    // 获取body元素
-    let body = document.body;
-
-    // // 创建计时器
-    // let timer = setTimeout(function () {
-    //     let img = new Image();
-    //     img.src = 'original-url.jpg';
-    //
-    //     img.onload = function () {
-    //         let loadedPercentage = (img.naturalWidth / img.width) * 100;
-    //
-    //         // 如果加载百分比小于50%，则更换背景图片URL
-    //         if (loadedPercentage < 50) {
-    //             body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
-    //         }
-    //     };
-    // }, 5000);
-</script>
 </body>
 </html>
