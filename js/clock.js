@@ -23,8 +23,8 @@ function prevImage() {
     updateBackground();
 }
 
-document.getElementById('prevBtn').addEventListener('click', prevImage);
-document.getElementById('nextBtn').addEventListener('click', nextImage);
+// document.getElementById('prevBtn').addEventListener('click', prevImage);
+// document.getElementById('nextBtn').addEventListener('click', nextImage);
 
 function startSlideshow() {
     nextImage();
