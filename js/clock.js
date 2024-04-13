@@ -111,18 +111,3 @@ setInterval(updateClock, 1000);
 
 // 获取body元素
 let body = document.body;
-
-// // 创建计时器
-// let timer = setTimeout(function () {
-//     let img = new Image();
-//     img.src = 'original-url.jpg';
-//
-//     img.onload = function () {
-//         let loadedPercentage = (img.naturalWidth / img.width) * 100;
-//
-//         // 如果加载百分比小于50%，则更换背景图片URL
-//         if (loadedPercentage < 50) {
-//             body.style.backgroundImage = "url('https://img520.com/uAiCST.jpg') no-repeat 0";
-//         }
-//     };
-// }, 5000);
