@@ -39,7 +39,7 @@
             <input type="number" id="min" value="1">
 
             <label for="max">最大值:</label>
-            <input type="number" id="max" value="54">
+            <input type="number" id="max" value="53">
 
             <button onclick="generateNumbers()">抽取</button>
         </div>
@@ -71,6 +71,7 @@
         }
         if (quantity > 512) {
             quantity = 512;
+            document.getElementById('quantity').value = 512;
         }
 
         let result = document.getElementById('result');

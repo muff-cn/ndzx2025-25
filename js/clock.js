@@ -20,7 +20,11 @@ function shuffleArray(array) {
 images = shuffleArray(images)
 
 function updateBackground() {
-    document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+    const img = new Image();
+    img.onload = function() {
+        document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+    };
+    img.src = images[currentImageIndex];
 }
 
 function nextImage() {
