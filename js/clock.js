@@ -1,12 +1,22 @@
 let currentImageIndex = 0; // 当前显示的图片索引
 images = [
-    'https://img2.imgtp.com/2024/04/05/RjR7PPef.jpg',
-    'https://img2.imgtp.com/2024/04/05/ok7TcGG6.jpg',
-    'https://img2.imgtp.com/2024/04/05/YhtBvirs.jpg',
-    'https://img2.imgtp.com/2024/04/05/jVlqq9p9.jpg',
-    'https://img2.imgtp.com/2024/04/05/segKawLS.jpg',
-    'https://img2.imgtp.com/2024/04/05/k1iPum6P.jpg',
-    'https://img2.imgtp.com/2024/04/05/nuBt3KgE.jpg',
+    'https://img520.com/KFmyTn.jpg',
+
+    'https://img520.com/uHgZWu.jpg',
+
+    'https://img520.com/zvPvtF.jpg',
+
+    'https://img520.com/3diS1r.jpg',
+
+    'https://img520.com/lXGqme.jpg',
+
+    'https://img520.com/1RTZWu.jpg',
+
+    'https://img520.com/dM08qZ.jpg',
+
+    'https://img520.com/tggJol.jpg',
+
+    'https://img520.com/MexEDp.jpg',
 ]
 
 function shuffleArray(array) {
@@ -21,7 +31,7 @@ images = shuffleArray(images)
 
 function updateBackground() {
     const img = new Image();
-    img.onload = function() {
+    img.onload = function () {
         document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
     };
     img.src = images[currentImageIndex];
